@@ -1,0 +1,26 @@
+// #descriptive__img__1 {
+//     width: 25%;
+// }
+
+#home {
+  .description__item {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0.5rem 2rem;
+    gap: 2rem;""
+    * {
+      flex: 1;
+    }
+    figcaption {
+      text-align: start;
+    }
+    img {
+      max-width: 30%;
+      overflow: hidden;
+      //     &#descriptive__img__1:hover {
+      //       overflow: hidden;
+      //     transform: scale(2.5) translate(-100px, -110px);
+      //   }
+    }
+  }
+}

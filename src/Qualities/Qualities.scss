@@ -1,0 +1,89 @@
+#qualities {
+  position: relative;
+  overflow-x: hidden;
+  min-height: 60vh;
+
+  .grid {
+    position: absolute;
+    width: 40vw;
+    height: 40vh;
+    z-index: -1;
+    &.left {
+      transform: translate(-50%, 25%);
+      left: 0;
+    }
+    &.right {
+      transform: translate(50%, 25%);
+      right: 0;
+    }
+    @media only screen and (max-width: 900px) {
+      display: none;
+    }
+    @media only screen and (min-width: 768px) and (max-width: 900px) {
+      &.left {
+        display: none;
+      }
+    }
+    path {
+      stroke: var(--secondary-color);
+      stroke-width: 0.65;
+      stroke-linecap: round;
+      fill: var(--secondary-color);
+      fill: none;
+      stroke-dasharray: 120;
+      stroke-dashoffset: 120;
+      // TODO: Animation will kick in when the element is in the viewport
+      // TODO: for now its length is 40s
+      animation: dashIn 5s linear forwards;
+      @keyframes dashIn {
+        from {
+          stroke-dashoffset: 120;
+        }
+        to {
+          stroke-dashoffset: 80;
+        }
+      }
+    }
+  }
+  #quality__wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 6rem 8rem;
+    @media only screen and (max-width: 768px) {
+      padding: 2rem 4rem;
+    }
+  }
+
+  .quality {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.8rem;
+    flex: 1;
+
+    .quality__icon__wrapper {
+      border-color: var(--secondary-color);
+      border: 6px solid var(--secondary-color);
+
+      padding: 1rem;
+      border-radius: 9999px;
+    }
+    img {
+      padding: 0.5rem;
+      width: 96px;
+      height: 96px;
+      @media only screen and (max-width: 768px) {
+        width: 64px;
+        height: 64px;
+      }
+    }
+    h1 {
+      font-size: 1.5rem;
+    }
+    p {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}

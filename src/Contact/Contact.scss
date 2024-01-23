@@ -1,0 +1,30 @@
+#contact {
+  position: relative;
+  overflow: hidden;
+  min-height: 60vh;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .ajazz-logo {
+    rotate: z -90deg;
+    width: 372.5px;
+    height: 72.5px;
+  }
+
+  #contact__form {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 40%;
+    *:not(h2.title) {
+      display: flex;
+      flex-direction: column;
+      padding: 0.5rem;
+      margin: 0.5rem;
+      border: 1px solid var(--secondary-color);
+      font-size: 1.2rem;
+      border-radius: 4px;
+    }
+  }
+}
