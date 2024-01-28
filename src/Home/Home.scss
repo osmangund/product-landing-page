@@ -3,20 +3,45 @@
 // }
 
 #home {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
   .description__item {
     display: flex;
     flex-direction: row-reverse;
     padding: 0.5rem 2rem;
-    gap: 2rem;""
+    gap: 2rem;
+    &:nth-child(odd) {
+      flex-direction: row;
+      * {
+        text-align: end;
+      }
+    }
     * {
       flex: 1;
     }
     figcaption {
       text-align: start;
+      h1 {
+        display: inline-block;
+        font-weight: 500;
+        margin: 0;
+        font-size: 4rem;
+        letter-spacing: 2px;
+        border-bottom: 3px solid var(--text-color);
+      }
+
+      p {
+        margin-bottom: 1rem;
+        font-size: 1.125rem;
+        line-height: 1.5;
+      }
     }
     img {
       max-width: 30%;
       overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid black;
       //     &#descriptive__img__1:hover {
       //       overflow: hidden;
       //     transform: scale(2.5) translate(-100px, -110px);

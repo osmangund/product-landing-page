@@ -1,0 +1,70 @@
+#keyboard-swiper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  #keyboards {
+    position: relative;
+    width: var(--keyboard-width);
+    aspect-ratio: 2.5;
+    display: flex;
+    justify-content: center;
+    .keyboard {
+      position: absolute;
+      top: 0;
+      transition: transform 400ms ease;
+      &[data-status="unknown"] {
+        scale: 0;
+      }
+      &[data-status="before"] {
+        transform: translateX(-50%) scale(0);
+      }
+      &[data-status="becoming-active-from-before"] {
+        transform: translateX(-50%) scale(0);
+        transition: none;
+      }
+      &[data-status="active"] {
+        transition-delay: 300ms;
+      }
+      &[data-status="after"] {
+        transform: translateX(50%) scale(0);
+      }
+      &[data-status="becoming-active-from-after"] {
+        transform: translateX(50%) scale(0);
+        transition: none;
+      }
+      .keyboard-image {
+        width: var(--keyboard-width);
+        // height: var(--keyboard-height);
+        aspect-ratio: 2.5;
+        filter: drop-shadow(0 0 2rem black);
+
+        @media only screen and (max-width: 768px) {
+          --keyboard-width: 80vw;
+          --keyboard-height: 80vw;
+        }
+      }
+    }
+  }
+  #keyboard-swiper-buttons {
+    position: absolute;
+
+    width: var(--keyboard-width);
+    aspect-ratio: 2.5;
+    .arrow-icon {
+      position: absolute;
+      cursor: pointer;
+      width: var(--arrow-size);
+      height: var(--arrow-size);
+      translate: 0 -50%;
+      &.left {
+        left: 10%;
+        top: 25%;
+      }
+      &.right {
+        right: 10%;
+        top: 25%;
+      }
+    }
+  }
+}

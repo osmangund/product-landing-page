@@ -9,11 +9,11 @@
     height: 40vh;
     z-index: -1;
     &.left {
-      transform: translate(-50%, 25%);
+      transform: translate(-50%, 10%);
       left: 0;
     }
     &.right {
-      transform: translate(50%, 25%);
+      transform: translate(50%, 10%);
       right: 0;
     }
     @media only screen and (max-width: 900px) {
@@ -25,11 +25,9 @@
       }
     }
     path {
-      stroke: var(--secondary-color);
+      stroke: var(--text-color);
       stroke-width: 0.65;
       stroke-linecap: round;
-      fill: var(--secondary-color);
-      fill: none;
       stroke-dasharray: 120;
       stroke-dashoffset: 120;
       // TODO: Animation will kick in when the element is in the viewport
@@ -49,7 +47,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 6rem 8rem;
+    padding: 3rem 7rem;
     @media only screen and (max-width: 768px) {
       padding: 2rem 4rem;
     }
@@ -63,16 +61,19 @@
     flex: 1;
 
     .quality__icon__wrapper {
-      border-color: var(--secondary-color);
-      border: 6px solid var(--secondary-color);
+      border: 6px solid;
+      border-color: var(--text-color);
 
       padding: 1rem;
       border-radius: 9999px;
     }
-    img {
+    svg {
       padding: 0.5rem;
       width: 96px;
       height: 96px;
+      path {
+        fill: var(--text-color);
+      }
       @media only screen and (max-width: 768px) {
         width: 64px;
         height: 64px;
